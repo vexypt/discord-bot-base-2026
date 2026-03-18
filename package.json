@@ -1,0 +1,29 @@
+{
+  "name": "discord-bot-base",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/vexypt/discord-base-2026#readme",
+  "bugs": {
+    "url": "https://github.com/vexypt/discord-base-2026/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vexypt/discord-base-2026.git"
+  },
+  "license": "ISC",
+  "author": "vexy",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node --expose-gc shard.js",
+    "canary": "cross-env NODE_ENV=development node --expose-gc src/index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.25.1",
+    "dotenv": "^17.3.1",
+    "mongoose": "^9.3.0"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0"
+  }
+}

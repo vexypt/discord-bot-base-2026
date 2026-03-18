@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+.env.dev
+.env.development
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build/output
+dist/
+build/
+coverage/
+.nyc_output/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# MongoDB local data (for local/dev setups)
+data/db/
+dump/
+
+# OS / Editor
+.DS_Store
+.idea/
+__MACOSX

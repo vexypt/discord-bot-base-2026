@@ -1,0 +1,14 @@
+import { ComponentType } from "discord.js";
+import Component from "../utils/component.js";
+
+const languageSelect = new Component({
+    customId: "selectLanguage",
+    componentType: ComponentType.StringSelect,
+    async run(interaction) {
+        const { user } = interaction;
+        const selectedLanguage = interaction.values[0];
+        
+    }
+});
+
+export default languageSelect;
