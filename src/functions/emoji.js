@@ -5,10 +5,25 @@ import { formatEmoji } from "discord.js";
 import { createLogger } from "../utils/logger.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const settingsPath = path.join(__dirname, "../resources/configs/settings.json");
-const settings = JSON.parse(fs.readFileSync(settingsPath, "utf8"));
-const emojis = settings.emojis;
 const logger = createLogger("emoji");
+const settingsFileName = process.env.NODE_ENV === "development" ? "settings.dev.json" : "settings.json";
+const settingsPath = path.join(__dirname, `../resources/configs/${settingsFileName}`);
+let settings;
+
+try {
+  settings = JSON.parse(fs.readFileSync(settingsPath, "utf8"));
+} catch (error) {
+  const fallbackPath = path.join(__dirname, "../resources/configs/settings.json");
+
+  if (settingsFileName !== "settings.json") {
+    settings = JSON.parse(fs.readFileSync(fallbackPath, "utf8"));
+    logger.warn(`Failed to load ${settingsFileName}. Falling back to settings.json.`);
+  } else {
+    throw error;
+  }
+}
+
+const emojis = settings.emojis;
 
 function resolveEmoji(name) {
   try {

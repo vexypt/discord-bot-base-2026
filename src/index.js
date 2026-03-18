@@ -48,12 +48,25 @@ setInterval(() => {
 
 client.prefixcommands = new Collection();
 client.slashcommands = new Collection();
-const settingsPath = path.join(__dirname, "resources/configs/settings.json");
+const settingsFileName = process.env.NODE_ENV === "development" ? "settings.dev.json" : "settings.json";
+const settingsPath = path.join(__dirname, `resources/configs/${settingsFileName}`);
 try {
   client.settings = JSON.parse(fs.readFileSync(settingsPath, "utf8"));
 } catch (error) {
-  startupLogger.error("Failed to load settings.json", error);
-  process.exit(1);
+  const fallbackPath = path.join(__dirname, "resources/configs/settings.json");
+
+  if (settingsFileName !== "settings.json") {
+    try {
+      client.settings = JSON.parse(fs.readFileSync(fallbackPath, "utf8"));
+      startupLogger.warn(`Failed to load ${settingsFileName}. Falling back to settings.json.`, error);
+    } catch (fallbackError) {
+      startupLogger.error("Failed to load settings configuration", fallbackError);
+      process.exit(1);
+    }
+  } else {
+    startupLogger.error("Failed to load settings configuration", error);
+    process.exit(1);
+  }
 }
 
 await handler(client);

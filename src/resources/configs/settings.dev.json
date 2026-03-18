@@ -1,0 +1,27 @@
+{
+    "colors": {
+        "default": "#5865F2",
+        "success": "#22BB33",
+        "danger": "#BB2124",
+        "warning": "#F0AD4E",
+        "info": "#5BC0DE"
+    },
+    "emojis": {
+        "static": {
+            "check": "",
+            "deny": ""
+        },
+        "animated": {
+          "loading": "",
+          "arrow": ""
+        },
+        "default": {
+            "present": "",
+            "shakeHands": ""
+        }
+    },
+    "links": {
+        "supportServer":""
+    },
+    "devs": [""]
+}
