@@ -1,4 +1,4 @@
-# ScarBot
+# discord-bot-base 2026
 
 Base moderna para bot Discord com suporte a comandos prefix e slash, MongoDB, sharding, blacklist global e monitoramento de memoria.
 
