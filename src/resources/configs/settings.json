@@ -16,12 +16,12 @@
           "arrow": ""
         },
         "default": {
-            "present": "🎁",
-            "shakeHands": "🤝"
+            "present": "",
+            "shakeHands": ""
         }
     },
     "links": {
-        "supportServer":"https://discord.gg/EeZcRFpYV9"
+        "supportServer":""
     },
-    "devs": ["629734543867379732"]
+    "devs": [""]
 }

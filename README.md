@@ -190,4 +190,7 @@ Sem webhook configurado, o bot continua funcionando normalmente e apenas faz avi
 
 ## Licenca
 
-ISC
+Apache-2.0
+
+Este projeto usa `Apache License 2.0` e inclui um arquivo `NOTICE`.
+Ao redistribuir (inclusive forks e derivados), preserve os creditos e os avisos de atribuicao.
